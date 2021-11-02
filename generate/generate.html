@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workbench - Generate</title>
+    <link rel="stylesheet" href="generateStyle.css">
+</head>
+<body>
+    <div id="toolbar">
+        <h3>Generate</h3>
+        <p>Generate is a dithering tool used to make customized dithered graphics from images.</p>
+        <div class="break"></div>
+        <div class="rowContainer">
+            <div class="row">
+                <p>Canvas Height: </p>
+                <input id="canvasHeight"></input>
+            </div>
+            <div class="row">
+                <p>Canvas Width: </p>
+                <input id="canvasWidth"></input>
+            </div>
+            <div class="row">
+                <p>Match Image: </p>
+                <div id="matchImage" onclick="matchImageClickHandler();" class="radio radioActive"></div>
+            </div>
+        </div>
+        <div class="break"></div>
+        <div id="photoContainer">
+            <div id="dropZone" onclick="clickHandler();" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);" ondragleave="dragLeaveHandler(event);" onmouseover="clearMouseOverHandler(event);" onmouseleave="clearMouseLeaveHandler(event);">
+                <p id="dropText">Drop photo</p>
+            </div>
+            <div id="dimensions" class="rowContainer hide">
+                <div class="row">
+                    <p>Height: </p>
+                    <input id="imageHeight"></input>
+                </div>
+                <div class="row">
+                    <p>Width: </p>
+                    <input id="imageWidth"></input>
+                </div>
+                <div class="row">
+                    <p>Lock Ratio: </p>
+                    <div id="lockRatio" onclick="lockRatioClickHandler()" class="radio radioActive"></div>
+                </div>
+     
+
+            </div>
+        </div>
+        <div class="break"></div>
+        <div class="rowContainer">
+            <div class="row">
+                <p>Background Color: </p>
+                <input type="color" value="#000000" id="backgroundColor"></input>
+            </div>
+            <div class="row">
+                <p>Foreground Color: </p>
+                <input type="color" value="#ffffff" id="foregroundColor"></input>
+            </div>
+            <div class="row">
+                <div id="colorButton" onclick="colorHandler()" class="button">Change Color</div>
+            </div>
+        </div>
+        <div class="break"></div>
+        <div class="rowContainer">
+            <div class="row">
+                <div id="resizeButtonRed" onclick="resizeHandlerRed()" class="button">Resize Red</div>
+                <div id="resizeButtonGreen" onclick="resizeHandlerGreen()" class="button">Resize Green</div>
+                <div id="resizeButtonBlue" onclick="resizeHandlerBlue()" class="button">Resize Blue</div>
+            </div>
+            <div class="row">
+                <div id="ditherToggle" onclick="ditherToggleClickHandler()" class="button">Dithered</div>
+            </div>
+            <div class="row">
+                <div id="saveImage" onclick="saveImageHandler()" class="button">Save Image</div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <div id="canvasContainer"></div>
+</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" integrity="sha512-WIklPM6qPCIp6d3fSSr90j+1unQHUOoWDS4sdTiR8gxUTnyZ8S2Mr8e10sKKJ/bhJgpAa/qG068RDkg6fIlNFA==" crossorigin="anonymous"></script>
+    <script src="generateSketch.js"></script>
+</html>
